@@ -23,14 +23,20 @@
 <!--        <td>Core Competency</td>-->
 <!--    </tr>-->
 <!--    </thead>-->
-    <tr th:each="job : ${jobs}">
-        <td th:text="${job.id}">ID</td>
-        <td th:text="${job.name}">Name</td>
-        <td th:text="${job.employer}">Employer</td>
-        <td th:text="${job.location}">Location</td>
-        <td th:text="${job.positionType}">Position Type</td>
-        <td th:text="${job.coreCompetency}">Core Competency</td>
-    </tr>
+<!--    <tr th:each="job : ${jobs}">-->
+<!--        <td th:text="${job.id}">ID</td>-->
+<!--        <td th:text="${job.name}">Name</td>-->
+<!--        <td th:text="${job.employer}">Employer</td>-->
+<!--        <td th:text="${job.location}">Location</td>-->
+<!--        <td th:text="${job.positionType}">Position Type</td>-->
+<!--        <td th:text="${job.coreCompetency}">Core Competency</td>-->
+<!--    </tr>-->
+<!--THIS LOOKS UGLY THO-->
+    <th:block th:each="job : ${jobs}">
+        <tr>
+            <td th:text="${job}"></td>
+        </tr>
+    </th:block>
 </table>
 </div>
 

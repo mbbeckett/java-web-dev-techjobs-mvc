@@ -32,11 +32,21 @@
         </p>
 
         <input type="submit" value="Search" />
+
+<!--        <p th:if th:text="${error}"></p>-->
     </form>
 
-    <hr />
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <form th:action="@{/search/results}" method = "post">
+        <table>
+        <th:block th:each="job : ${jobs}">
+
+            <td th:text="${job.columns}"></td>
+
+        </th:block>
+    </table>
+    </form>
 
 </div>
 
