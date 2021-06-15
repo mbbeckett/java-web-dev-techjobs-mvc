@@ -26,18 +26,9 @@ public class SearchController {
         model.addAttribute("columns", columnChoices);
         return "search";
     }
-    //addAttribute is how template accesses data via the model
-//    "searchTerm" must be a string, accessed by the template using ${searchTerm}
-//    the attributeValue can be a variable of any type
-//    return specifies the path to the template
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
-//    RequestParam pulls data out of incoming request
-//    ModelAttribute used for model binding. Looks at the JobData object in the POST request, sees that it
-//    has the keys and values of a JobData object.
-//    Is ModelAttribute/Model binding needed for this handler?
-//    Instructions emphasize correct annotation.
-//
+
 
     public String displaySearchResults(Model model, String column, String searchTerm){
     if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")){
@@ -50,3 +41,17 @@ public class SearchController {
     return "results";
     }
 }
+
+
+
+
+//addAttribute is how template accesses data via the model
+//    "searchTerm" must be a string, accessed by the template using ${searchTerm}
+//    the attributeValue can be a variable of any type
+//    return specifies the path to the template
+//    RequestParam pulls data out of incoming request
+//    ModelAttribute used for model binding. Looks at the JobData object in the POST request, sees that it
+//    has the keys and values of a JobData object.
+//    Is ModelAttribute/Model binding needed for this handler?
+//    Instructions emphasize correct annotation.
+//
