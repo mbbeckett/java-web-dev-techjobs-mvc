@@ -3,16 +3,11 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
-
 <div th:replace="fragments :: page-header"></div>
-
 <div class="container body-content">
-
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-
     <form th:action="@{/search/results}" method = "post">
         <h2>Search by:</h2>
-
         <p>
             <span th:each="column : ${columns}">
                 <input
@@ -23,30 +18,19 @@
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
         </p>
-
         <p>
             <label for="searchTerm">Keyword:</label>
             <input type="text" name="searchTerm" id="searchTerm" />
         </p>
-
         <input type="submit" value="Search" />
-
-<!--        <p th:if th:text="${error}"></p>-->
     </form>
-
-
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
-<!--    <form th:action="@{/search/results}" method = "post">-->
     <table>
         <tr th:each="job : ${jobs}">
-            <td th:text="${job.name}"></td>
+            <td th:text="${job.column}"></td>
         </tr>
     </table>
-<!--    </form>-->
-
 </div>
-
 </body>
 </html>
