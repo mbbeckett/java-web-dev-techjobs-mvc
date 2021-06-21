@@ -45,15 +45,15 @@ public class SearchController {
         return "search";
     }
 
-    @PostMapping(value="field")
-    public String displayFieldValueSearchResults(Model model, @ModelAttribute Job job, @ModelAttribute String fieldName){
-        ArrayList<Job> jobs;
-        if(fieldName.toLowerCase().equals("all")){
-            jobs = JobData.findAll();
-        } else {
-            jobs = JobData.findByValue(fieldName);
-        }
-        model.addAttribute("fieldNames", jobs);
-        return "search-field";
-    }
+//    @PostMapping(value="field")
+//    public String displayFieldValueSearchResults(Model model, @ModelAttribute Job job, @ModelAttribute String fieldName){
+//        ArrayList<Job> jobs;
+//        if(fieldName.toLowerCase().equals("all")){
+//            jobs = JobData.findAll();
+//        } else {
+//            jobs = JobData.findByValue(fieldName);
+//        }
+//        model.addAttribute("fieldNames", jobs);
+//        return "search-field";
+//    }
 }
